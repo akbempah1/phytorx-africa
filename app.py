@@ -541,7 +541,7 @@ st.markdown("""
 </div>""", unsafe_allow_html=True)
 
 with st.expander("🔑 API Configuration", expanded=False):
-    api_key=st.text_input("Anthropic API Key", type="password")
+    api_key = st.secrets.get("ANTHROPIC_API_KEY", "") or st.text_input("Anthropic API Key", type="password", help="Or set ANTHROPIC_API_KEY in secrets")
 
 st.markdown("---")
 
